@@ -1,4 +1,3 @@
-from library_of_pantheon_backend.users.signals import user_pre_init_create_hash, user_pre_save_create_hash, user_post_save_handler
 from django.contrib.auth.models import AbstractUser
 from django.db.models import (
     CharField,
@@ -48,4 +47,27 @@ class User(AbstractUser):
 
 # pre_init.connect(user_pre_init_create_hash, sender=User)
 # pre_save.connect(user_pre_save_create_hash, sender=User)
+def user_pre_init_create_hash(sender, instance=None, *args, **kwargs):
+    if(instance):
+        password = instance.password
+        instance.set_password(password)
+        print('user_pre_init_create_hash: ', instance.password)
+
+
+def user_pre_save_create_hash(sender, instance=None, *args, **kwargs):
+    password = instance.password
+    instance.set_password(password)
+    print('user_pre_save_create_hash: ', instance.password)
+
+
+def user_post_save_handler(sender, **kwargs):
+    ''' created an instance of User Setting when a new User is created '''
+    instance = kwargs.get('instance')
+    created = kwargs.get('created', False)
+    if created:
+        obj = UserSetting()
+        obj.save()
+        instance.setting = obj
+        instance.save()
+
 post_save.connect(user_post_save_handler, sender=User)

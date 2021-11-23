@@ -14,6 +14,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from .serializers import UserSerializer, UserSettingSerializer
 from library_of_pantheon_backend.utils.pagination import StandardResultsSetPagination
 
+
 def get_user_response(token, user):
     update_last_login(None, user)
     user_setting = UserSettingSerializer(user.setting).data

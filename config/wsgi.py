@@ -1,5 +1,5 @@
 """
-WSGI config for pwa-store-backend project.
+WSGI config for library-of-pantheon-backend project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable

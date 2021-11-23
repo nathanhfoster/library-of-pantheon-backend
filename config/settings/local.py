@@ -88,9 +88,9 @@ INSTALLED_APPS += ["django_extensions"]  # noqa F405
 
 DATABASES['default'] = {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'library_of_pantheon_db',
-    'USER': 'library_user',
-    'PASSWORD': 'libraryofpantheon',
+    'NAME': 'postgres',
+    'USER': 'postgres',
+    'PASSWORD': 'Seabee88?',
     'HOST': 'localhost',
     'PORT': '',
 }

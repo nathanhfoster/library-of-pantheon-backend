@@ -280,3 +280,4 @@ library_of_pantheon_backend/media/
 
 #virtual env
 virtual
+.vscode

@@ -1,9 +1,9 @@
-.. pwa-store-backend documentation master file, created by
+.. library-of-pantheon-backend documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pwa-store-backend's documentation!
+Welcome to library-of-pantheon-backend's documentation!
 ======================================================================
 
 .. toctree::

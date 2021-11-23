@@ -1,5 +1,5 @@
 
-pwa-store-backend
+library-of-pantheon-backend
 =================
 
 django pwd-store backend

@@ -26,9 +26,9 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "pwa-store-backend"
-copyright = """2021, Nabin Bhusal"""
-author = "Nabin Bhusal"
+project = "library-of-pantheon-backend"
+copyright = """2021, Nathan Foster"""
+author = "Nathan Foster"
 
 
 # -- General configuration ---------------------------------------------------

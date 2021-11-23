@@ -9,7 +9,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
 from django.contrib.auth.models import update_last_login
 from rest_framework import generics
-from library_of_pantheon_backend.users.models import UserSetting, User
+from library_of_pantheon_backend.users.models import User, UserSetting
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from .serializers import UserSerializer, UserSettingSerializer
 from library_of_pantheon_backend.utils.pagination import StandardResultsSetPagination

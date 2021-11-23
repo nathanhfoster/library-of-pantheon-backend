@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item, Category, ItemAnalytics
+from .models import Item, Category
 from import_export.fields import Field
 from import_export.resources import ModelResource
 from import_export.admin import ImportExportActionModelAdmin

@@ -1,5 +1,5 @@
 from library_of_pantheon_backend.utils.pagination import StandardResultsSetPagination
-from .serializers import ItemSerializer, ItemDetailSerializer,  CategorySerializer
+from .serializers import ItemSerializer, ItemDetailSerializer, CategorySerializer
 from ..models import Item, Category
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
@@ -28,15 +28,14 @@ class ItemViewSet(ModelViewSet):
     lookup_field = 'slug'
     permission_classes = (IsAuthenticated,)
     filter_backends = (SearchFilter,)
-    search_fields = ['slug', 'name', 'url', 'description', 'categories__name',
-                     'organization__name', 'organization__description', 'manifest_json', ]
+    search_fields = ['slug', 'name', 'url', 'description', 'categories__name',]
 
     def get_queryset(self):
         if self.request.parser_context['kwargs'].get('slug', None):
             qs = super().get_queryset()
         else:
             qs = super().get_queryset().filter(published=True)
-        return qs.select_related('pwa_analytics', 'organization')
+        return qs
 
     def get_permissions(self):
         # allow an authenticated user to create via POST

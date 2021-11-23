@@ -1,8 +1,5 @@
-from rest_framework.serializers import ModelSerializer, JSONField, Field
-from pwa_store_backend.users.models import User
-from rest_framework import serializers
-from ..models import Item, Category, ItemScreenshot, ItemAnalytics
-from pwa_store_backend.users.models import User
+from rest_framework.serializers import ModelSerializer
+from ..models import Item, Category
 
 
 class CategorySerializer(ModelSerializer):
@@ -10,12 +7,6 @@ class CategorySerializer(ModelSerializer):
         model = Category
         fields = ('name',)
         read_only_fields = ('created_at', 'updated_at')
-
-
-class ItemAnalyticsSerializer(ModelSerializer):
-    class Meta:
-        model = ItemAnalytics
-        fields = ('view_count', 'launch_count', 'rating_avg', 'rating_count', )
 
 
 class ItemMinimalSerializer(ModelSerializer):

@@ -8,5 +8,6 @@ else:
     router = SimpleRouter()
 
 router.register('items', ItemViewSet)
-
 app_name = "items"
+
+urlpatterns = router.urls
